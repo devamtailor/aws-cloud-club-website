@@ -7,6 +7,7 @@ import { PageTransition } from "./components/common/PageTransition";
 import { AdminDashboardPage } from "./pages/AdminDashboardPage";
 import { AdminLoginPage } from "./pages/AdminLoginPage";
 import { HomePage } from "./pages/HomePage";
+import { EventsPage } from "./pages/EventsPage";
 import { WhyUsPage } from "./pages/WhyUsPage";
 import { MeetTeamPage } from "./pages/MeetTeamPage";
 import { FAQPage } from "./pages/FAQPage";
@@ -22,6 +23,7 @@ const App = () => {
         <PageTransition key={location.pathname}>
           <Routes location={location}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/events" element={<EventsPage />} />
             <Route path="/why-us" element={<WhyUsPage />} />
             <Route path="/team" element={<MeetTeamPage />} />
             <Route path="/faq" element={<FAQPage />} />

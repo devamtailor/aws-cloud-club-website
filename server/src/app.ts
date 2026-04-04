@@ -23,6 +23,18 @@ app.get("/api/health", (_req, res) => {
   res.status(200).json({ success: true, message: "Server is healthy" });
 });
 
+app.get("/", (_req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "AWS Cloud Club API is running",
+    docs: {
+      health: "/api/health",
+      announcements: "/api/announcements",
+      adminLogin: "/api/admin/login"
+    }
+  });
+});
+
 app.use("/api/admin", adminRoutes);
 app.use("/api/announcements", announcementRoutes);
 

@@ -6,7 +6,7 @@ const navItems = [
   { label: "Dashboard", href: "/", icon: "📊" },
   { label: "Why Us", href: "/why-us", icon: "⭐" },
   { label: "Team", href: "/team", icon: "👥" },
-  { label: "Events", href: "/faq", icon: "📅" },
+  { label: "Events", href: "/events", icon: "📅" },
   { label: "Join Us", href: "/join", icon: "🚀" },
 ];
 
@@ -15,11 +15,11 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-gradient-to-b from-[#0b1220] via-[#0f172a] to-transparent backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-linear-to-b from-[#0b1220] via-[#0f172a] to-transparent backdrop-blur-2xl">
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover:shadow-orange-500/50 transition-all">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-orange-500 to-orange-600 shadow-lg shadow-orange-500/30 transition-all group-hover:shadow-orange-500/50">
             <span className="text-lg">☁️</span>
           </div>
           <div>
@@ -52,7 +52,7 @@ export const Navbar = () => {
         <div className="hidden lg:flex items-center gap-3">
           <button
             onClick={() => navigate("/admin/login")}
-            className="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-orange-500/40 transition-all duration-200 transform hover:-translate-y-0.5"
+            className="rounded-lg bg-linear-to-r from-orange-500 to-orange-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/40"
           >
             Admin Portal
           </button>
@@ -80,7 +80,7 @@ export const Navbar = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="lg:hidden bg-gradient-to-b from-white/8 to-transparent backdrop-blur-md border-t border-white/5 py-4 px-4 space-y-2"
+          className="border-t border-white/5 bg-linear-to-b from-white/8 to-transparent px-4 py-4 space-y-2 backdrop-blur-md"
         >
           {navItems.map((item) => (
             <NavLink
@@ -88,7 +88,7 @@ export const Navbar = () => {
               to={item.href}
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-lg text-sm font-medium transition-all flex items-center gap-3 ${
+                `px-4 py-3 rounded-lg text-sm font-medium transition-all flex items-center gap-3 ${
                   isActive
                     ? "bg-orange-500/20 text-orange-300 border border-orange-500/30"
                     : "text-slate-400 hover:text-white hover:bg-white/8 border border-transparent"
@@ -104,7 +104,7 @@ export const Navbar = () => {
               navigate("/admin/login");
               setIsOpen(false);
             }}
-            className="block w-full px-4 py-3 mt-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-orange-500/40 transition-all"
+            className="mt-4 w-full rounded-lg bg-linear-to-r from-orange-500 to-orange-600 px-4 py-3 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-orange-500/40"
           >
             Admin Portal
           </button>
