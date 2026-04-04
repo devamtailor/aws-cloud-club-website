@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --aws-bg-1: #0b1220;
+  --aws-bg-2: #0f172a;
+  --aws-bg-3: #1a2332;
+  --aws-orange: #ff9900;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  background: linear-gradient(160deg, var(--aws-bg-1), var(--aws-bg-2));
+  color: #e2e8f0;
+}
+
+.hero-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 95%);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(15, 23, 42, 0.7));
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 35px rgba(2, 6, 23, 0.35), inset 1px 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(20, 28, 47, 0.75));
+  box-shadow: 0 24px 48px rgba(255, 153, 0, 0.15), inset 1px 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 153, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff9900, #ff8c00);
+  color: #0b1220;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 153, 0, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #94a3b8;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #ff9900;
+  color: #ff9900;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff, #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.accent-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9900, transparent);
+  border-radius: 2px;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 153, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 153, 0, 0.5);
+}
